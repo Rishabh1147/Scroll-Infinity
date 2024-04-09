@@ -1,11 +1,6 @@
-
-
 import { ID, Query } from "appwrite";
-
 import { appwriteConfig, account, databases, storage, avatars } from "./config";
-import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
-import { error } from "console";
-
+import { IUpdatePost, INewPost, INewUser } from "@/types";
 
 export async function createUserAccount(user: INewUser) {
   try {
@@ -69,7 +64,7 @@ export async function signInAccount(user: { email: string; password: string }) {
 export async function getAccount() {
   try {
     const currentAccount = await account.get();
-
+  
     return currentAccount;
   } catch (error) {
     console.log(error);
@@ -381,6 +376,29 @@ export async function searchPosts(searchTerm:string) {
     if (!posts) throw Error;
     return posts;
 
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+export async function getUsers(limit?: number) {
+  const queries: any[] = [Query.orderDesc("$createdAt")];
+
+  if (limit) {
+    queries.push(Query.limit(limit));
+  }
+
+  try {
+    const users = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      queries
+    );
+
+    if (!users) throw Error;
+
+    return users;
   } catch (error) {
     console.log(error);
   }
