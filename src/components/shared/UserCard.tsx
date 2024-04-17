@@ -12,7 +12,7 @@ const UserCard = ({ user }: userCardProps) => {
 
   return (
     <div className="border border-gray-900 rounded-lg p-4 flex flex-col justify-between">
-        <Link to={`profile/${user.$id}`}>
+        <Link to={`/all-users/profile/${user.$id}`}>
             <img 
                 src={user.imageURL || "assets/icons/people-placeholder.svg"} 
                 alt="creator"
