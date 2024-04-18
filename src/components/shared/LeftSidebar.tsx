@@ -5,7 +5,6 @@ import { useSignOutAccount } from '@/lib/react-query/queriesandmutation'
 import { useUserContext } from '@/context/AuthContext'
 import { sidebarLinks } from '@/constant'
 import { INavLink } from '@/types'
-import { boolean } from 'zod'
 
 
 const LeftSidebar = () => {
@@ -18,7 +17,7 @@ const LeftSidebar = () => {
     if (isSuccess) {
       navigate(0);
     }
-  }, [isSuccess]);
+  }, [isSuccess, navigate]);
   return (
     <nav className= "leftsidebar">
       <div className="flex flex-col gap-11">

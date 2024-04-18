@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
-
 import useDebounce from "@/hooks/useDebounce";
 import Loader from "@/components/shared/Loader";
 import GridPostList from "@/components/shared/GridPostList";
@@ -39,7 +37,7 @@ const Explore = () => {
     if (inView && !searchValue) {
       fetchNextPage();
     }
-  }, [inView, searchValue]);
+  }, [inView, searchValue, fetchNextPage]);
 
   if (!posts)
     return (

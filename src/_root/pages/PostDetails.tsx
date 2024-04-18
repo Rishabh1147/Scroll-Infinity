@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { useUserContext } from '@/context/AuthContext';
 import { useGetPostById } from '@/lib/react-query/queriesandmutation'
 import { multiFormatDateString } from '@/lib/utils';
-import { Ghost } from 'lucide-react';
-import React from 'react'
 import { Link, useParams } from 'react-router-dom';
 
 const PostDetails = () => {
