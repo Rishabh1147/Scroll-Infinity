@@ -6,8 +6,6 @@ type userCardProps = {
     user: Models.Document;
 }
 
-
-
 const UserCard = ({ user }: userCardProps) => {
 
   return (

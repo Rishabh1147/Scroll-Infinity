@@ -1,6 +1,5 @@
 import GridPostList from '@/components/shared/GridPostList'
 import Loader from '@/components/shared/Loader'
-import { savePost } from '@/lib/appwrite/api'
 import { useGetCurrentUser } from '@/lib/react-query/queriesandmutation'
 import { Models } from 'appwrite'
 

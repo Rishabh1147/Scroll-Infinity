@@ -1,14 +1,7 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import {Form,FormControl,FormField,FormItem,FormLabel,FormMessage,} from "@/components/ui/form";
 import { ProfileValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById, useUpdateUser } from "@/lib/react-query/queriesandmutation";
@@ -72,31 +65,6 @@ const UpdateProfile = () => {
       });
       return navigate(`/profile/${id}`);
     };
-
-    // const handleUpdate = async (value: z.infer<typeof ProfileValidation>) => {
-    //   const updatedUser = await updateUser({
-    //     userId: currentUser.$id,
-    //     name: value.name,
-    //     bio: value.bio,
-    //     file: value.file,
-    //     imageUrl: currentUser.imageUrl,
-    //     imageId: currentUser.imageId,
-    //   });
-  
-    //   if (!updatedUser) {
-    //     toast({
-    //       title: `Update user failed. Please try again.`,
-    //     });
-    //   }
-  
-    //   setUser({
-    //     ...user,
-    //     name: updatedUser?.name,
-    //     bio: updatedUser?.bio,
-    //     imageUrl: updatedUser?.imageUrl,
-    //   });
-    //   return navigate(`/profile/${id}`);
-    // };
 
   return (
     <div className="flex flex-1">

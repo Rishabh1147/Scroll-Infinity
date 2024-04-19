@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../ui/button'
 import { useSignOutAccount } from '@/lib/react-query/queriesandmutation'
 import { useUserContext } from '@/context/AuthContext'
+import { useEffect } from 'react'
 
 
 const Topbar = () => {
@@ -40,8 +40,7 @@ const Topbar = () => {
             </div>
         </div>
     </section>
-    // <div> topbar</div>
-  )
-}
+  );
+};
 
-export default Topbar
+export default Topbar;

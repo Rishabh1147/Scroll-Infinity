@@ -4,7 +4,7 @@ import { useGetCurrentUser } from "@/lib/react-query/queriesandmutation"
 
 
 const LikedPosts = () => {
-  const {data:currentUser} = useGetCurrentUser();
+  const { data: currentUser } = useGetCurrentUser();
 
   if(!currentUser)
     return(
@@ -12,7 +12,7 @@ const LikedPosts = () => {
     <Loader />
   </div>
   );
-
+  
   return (
     <>
       {currentUser.liked.length === 0 && (
